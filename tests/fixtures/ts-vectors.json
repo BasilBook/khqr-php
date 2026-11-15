@@ -1,0 +1,1916 @@
+{
+  "_source": "Made by packages/php-vectors.mjs from the built @basilbook TypeScript packages. Do not edit by hand: change the TypeScript and run it again.",
+  "khqrEncode": [
+    {
+      "input": {
+        "accountId": "vandoeurn@devb",
+        "merchantName": "Vandoeurn",
+        "amount": 10100,
+        "currency": "USD",
+        "createdAt": 1727249364974,
+        "expiresAt": 1727249484974
+      },
+      "qr": "00020101021229180014vandoeurn@devb52045999530384054031015802KH5909Vandoeurn6010Phnom Penh9934001317272493649740113172724948497463047BD0",
+      "md5": "66ae031d484194112553115cdc7faef1"
+    },
+    {
+      "input": {
+        "accountId": "jonhsmith@nbcq",
+        "merchantName": "Jonh Smith",
+        "merchantCity": "PHNOM PENH",
+        "amount": 100,
+        "currency": "USD",
+        "billNumber": "INV-2021-07-65822",
+        "createdAt": 1,
+        "expiresAt": 2
+      },
+      "qr": "00020101021229180014jonhsmith@nbcq520459995303840540115802KH5910Jonh Smith6010PHNOM PENH62210117INV-2021-07-658229910000110101263049FD4",
+      "md5": "faae63b606f15a190057cf4c75a598a3"
+    },
+    {
+      "input": {
+        "accountId": "jonhsmith@nbcq",
+        "merchantName": "Jonh Smith",
+        "amount": 50000,
+        "currency": "KHR",
+        "storeLabel": "BKK-1",
+        "createdAt": 1,
+        "expiresAt": 2
+      },
+      "qr": "00020101021229180014jonhsmith@nbcq5204599953031165405500005802KH5910Jonh Smith6010Phnom Penh62090305BKK-19910000110101263049224",
+      "md5": "82afe6a5aab191811e851818da12b669"
+    },
+    {
+      "input": {
+        "accountId": "a@b",
+        "merchantName": "ស្រះ Lotus & Lime Café — Riverside branch",
+        "amount": 100,
+        "currency": "USD",
+        "createdAt": 1,
+        "expiresAt": 2
+      },
+      "qr": "00020101021229070003a@b520459995303840540115802KH5925Lotus & Lime Cafe Riversi6010Phnom Penh9910000110101263049B58",
+      "md5": "b344719c731d185a2d2334543fbaca5b"
+    },
+    {
+      "input": {
+        "accountId": "  lotus_lime@aclb ",
+        "merchantName": "   ",
+        "merchantCity": "Siem Reap — Old Market district",
+        "amount": 450,
+        "currency": "USD",
+        "billNumber": "20261115-0042",
+        "storeLabel": "Riverside   branch",
+        "createdAt": 1763190000000,
+        "expiresAt": 1763190300000
+      },
+      "qr": "00020101021229190015lotus_lime@aclb52045999530384054044.505802KH5904Shop6015Siem Reap Old M6237011320261115-00420316Riverside branch9934001317631900000000113176319030000063042758",
+      "md5": "83b9ed3a841c1bab3914b305dfdfef7a"
+    },
+    {
+      "input": {
+        "accountId": "shop@aba",
+        "merchantName": "Ñandú Ölçek ﬁne Ｔea",
+        "amount": 20900,
+        "currency": "KHR",
+        "billNumber": "ផ្ទះ",
+        "storeLabel": "Ｂ２",
+        "createdAt": 1763190000000.9,
+        "expiresAt": 1763193600000
+      },
+      "qr": "00020101021229120008shop@aba5204599953031165405209005802KH5920Nandu Olcek fine Tea6010Phnom Penh62060302B29934001317631900000000113176319360000063041A3A",
+      "md5": "3923dd4790df4ad565beef9c52096aff"
+    }
+  ],
+  "khqrEncodeRefused": [
+    {
+      "input": {
+        "accountId": "a@b",
+        "merchantName": "A",
+        "amount": 100,
+        "currency": "THB",
+        "createdAt": 1,
+        "expiresAt": 2
+      },
+      "error": "KhqrInput",
+      "message": "KHQR takes riel and US dollars, not THB",
+      "problem": "currency"
+    },
+    {
+      "input": {
+        "accountId": "no account",
+        "merchantName": "A",
+        "amount": 100,
+        "currency": "USD",
+        "createdAt": 1,
+        "expiresAt": 2
+      },
+      "error": "KhqrInput",
+      "message": "That is not a Bakong account ID",
+      "problem": "account"
+    },
+    {
+      "input": {
+        "accountId": "a@b",
+        "merchantName": "A",
+        "amount": 0,
+        "currency": "USD",
+        "createdAt": 1,
+        "expiresAt": 2
+      },
+      "error": "KhqrInput",
+      "message": "A KHQR amount is a positive whole number of minor units",
+      "problem": "amount"
+    },
+    {
+      "input": {
+        "accountId": "a@b",
+        "merchantName": "A",
+        "amount": 100,
+        "currency": "USD",
+        "createdAt": 2,
+        "expiresAt": 2
+      },
+      "error": "KhqrInput",
+      "message": "A KHQR must expire after it is made",
+      "problem": "lifetime"
+    }
+  ],
+  "khqrDecode": [
+    {
+      "text": "00020101021229180014vandoeurn@devb52045999530384054031015802KH5909Vandoeurn6010Phnom Penh9934001317272493649740113172724948497463047BD0",
+      "result": {
+        "tags": {
+          "29": "0014vandoeurn@devb",
+          "52": "5999",
+          "53": "840",
+          "54": "101",
+          "58": "KH",
+          "59": "Vandoeurn",
+          "60": "Phnom Penh",
+          "63": "7BD0",
+          "99": "0013172724936497401131727249484974",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "vandoeurn@devb",
+        "account": {
+          "00": "vandoeurn@devb"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Vandoeurn",
+        "merchantCity": "Phnom Penh",
+        "countryCode": "KH",
+        "currency": "USD",
+        "amount": 10100,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {},
+        "alternateLanguage": {},
+        "createdAt": 1727249364974,
+        "expiresAt": 1727249484974,
+        "crc": "7BD0"
+      }
+    },
+    {
+      "text": "00020101021229180014jonhsmith@nbcq520459995303840540115802KH5910Jonh Smith6010PHNOM PENH62210117INV-2021-07-658229910000110101263049FD4",
+      "result": {
+        "tags": {
+          "29": "0014jonhsmith@nbcq",
+          "52": "5999",
+          "53": "840",
+          "54": "1",
+          "58": "KH",
+          "59": "Jonh Smith",
+          "60": "PHNOM PENH",
+          "62": "0117INV-2021-07-65822",
+          "63": "9FD4",
+          "99": "0001101012",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "jonhsmith@nbcq",
+        "account": {
+          "00": "jonhsmith@nbcq"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Jonh Smith",
+        "merchantCity": "PHNOM PENH",
+        "countryCode": "KH",
+        "currency": "USD",
+        "amount": 100,
+        "billNumber": "INV-2021-07-65822",
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {
+          "01": "INV-2021-07-65822"
+        },
+        "alternateLanguage": {},
+        "createdAt": 1,
+        "expiresAt": 2,
+        "crc": "9FD4"
+      }
+    },
+    {
+      "text": "00020101021229180014jonhsmith@nbcq5204599953031165405500005802KH5910Jonh Smith6010Phnom Penh62090305BKK-19910000110101263049224",
+      "result": {
+        "tags": {
+          "29": "0014jonhsmith@nbcq",
+          "52": "5999",
+          "53": "116",
+          "54": "50000",
+          "58": "KH",
+          "59": "Jonh Smith",
+          "60": "Phnom Penh",
+          "62": "0305BKK-1",
+          "63": "9224",
+          "99": "0001101012",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "jonhsmith@nbcq",
+        "account": {
+          "00": "jonhsmith@nbcq"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Jonh Smith",
+        "merchantCity": "Phnom Penh",
+        "countryCode": "KH",
+        "currency": "KHR",
+        "amount": 50000,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": "BKK-1",
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {
+          "03": "BKK-1"
+        },
+        "alternateLanguage": {},
+        "createdAt": 1,
+        "expiresAt": 2,
+        "crc": "9224"
+      }
+    },
+    {
+      "text": "00020101021229070003a@b520459995303840540115802KH5925Lotus & Lime Cafe Riversi6010Phnom Penh9910000110101263049B58",
+      "result": {
+        "tags": {
+          "29": "0003a@b",
+          "52": "5999",
+          "53": "840",
+          "54": "1",
+          "58": "KH",
+          "59": "Lotus & Lime Cafe Riversi",
+          "60": "Phnom Penh",
+          "63": "9B58",
+          "99": "0001101012",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "a@b",
+        "account": {
+          "00": "a@b"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Lotus & Lime Cafe Riversi",
+        "merchantCity": "Phnom Penh",
+        "countryCode": "KH",
+        "currency": "USD",
+        "amount": 100,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {},
+        "alternateLanguage": {},
+        "createdAt": 1,
+        "expiresAt": 2,
+        "crc": "9B58"
+      }
+    },
+    {
+      "text": "00020101021229190015lotus_lime@aclb52045999530384054044.505802KH5904Shop6015Siem Reap Old M6237011320261115-00420316Riverside branch9934001317631900000000113176319030000063042758",
+      "result": {
+        "tags": {
+          "29": "0015lotus_lime@aclb",
+          "52": "5999",
+          "53": "840",
+          "54": "4.50",
+          "58": "KH",
+          "59": "Shop",
+          "60": "Siem Reap Old M",
+          "62": "011320261115-00420316Riverside branch",
+          "63": "2758",
+          "99": "0013176319000000001131763190300000",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "lotus_lime@aclb",
+        "account": {
+          "00": "lotus_lime@aclb"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Shop",
+        "merchantCity": "Siem Reap Old M",
+        "countryCode": "KH",
+        "currency": "USD",
+        "amount": 450,
+        "billNumber": "20261115-0042",
+        "mobileNumber": null,
+        "storeLabel": "Riverside branch",
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {
+          "01": "20261115-0042",
+          "03": "Riverside branch"
+        },
+        "alternateLanguage": {},
+        "createdAt": 1763190000000,
+        "expiresAt": 1763190300000,
+        "crc": "2758"
+      }
+    },
+    {
+      "text": "00020101021229120008shop@aba5204599953031165405209005802KH5920Nandu Olcek fine Tea6010Phnom Penh62060302B29934001317631900000000113176319360000063041A3A",
+      "result": {
+        "tags": {
+          "29": "0008shop@aba",
+          "52": "5999",
+          "53": "116",
+          "54": "20900",
+          "58": "KH",
+          "59": "Nandu Olcek fine Tea",
+          "60": "Phnom Penh",
+          "62": "0302B2",
+          "63": "1A3A",
+          "99": "0013176319000000001131763193600000",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "shop@aba",
+        "account": {
+          "00": "shop@aba"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Nandu Olcek fine Tea",
+        "merchantCity": "Phnom Penh",
+        "countryCode": "KH",
+        "currency": "KHR",
+        "amount": 20900,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": "B2",
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {
+          "03": "B2"
+        },
+        "alternateLanguage": {},
+        "createdAt": 1763190000000,
+        "expiresAt": 1763193600000,
+        "crc": "1A3A"
+      }
+    },
+    {
+      "text": "00020101021130340009shop@devb0109MERCH00010204ABAA5204599953031165802KH5904Shop6010Phnom Penh6304B839",
+      "result": {
+        "tags": {
+          "30": "0009shop@devb0109MERCH00010204ABAA",
+          "52": "5999",
+          "53": "116",
+          "58": "KH",
+          "59": "Shop",
+          "60": "Phnom Penh",
+          "63": "B839",
+          "00": "01",
+          "01": "11"
+        },
+        "pointOfInitiation": "11",
+        "accountType": "merchant",
+        "accountId": "shop@devb",
+        "account": {
+          "00": "shop@devb",
+          "01": "MERCH0001",
+          "02": "ABAA"
+        },
+        "acquiringBank": "ABAA",
+        "merchantId": "MERCH0001",
+        "merchantCategoryCode": "5999",
+        "merchantName": "Shop",
+        "merchantCity": "Phnom Penh",
+        "countryCode": "KH",
+        "currency": "KHR",
+        "amount": null,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {},
+        "alternateLanguage": {},
+        "createdAt": null,
+        "expiresAt": null,
+        "crc": "B839"
+      }
+    },
+    {
+      "text": "00020101021129070003a@b53031165802KH5901A6002PP64110002km0101ក6304FD4F",
+      "result": {
+        "tags": {
+          "29": "0003a@b",
+          "53": "116",
+          "58": "KH",
+          "59": "A",
+          "60": "PP",
+          "63": "FD4F",
+          "64": "0002km0101ក",
+          "00": "01",
+          "01": "11"
+        },
+        "pointOfInitiation": "11",
+        "accountType": "individual",
+        "accountId": "a@b",
+        "account": {
+          "00": "a@b"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": null,
+        "merchantName": "A",
+        "merchantCity": "PP",
+        "countryCode": "KH",
+        "currency": "KHR",
+        "amount": null,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {},
+        "alternateLanguage": {
+          "00": "km",
+          "01": "ក"
+        },
+        "createdAt": null,
+        "expiresAt": null,
+        "crc": "FD4F"
+      }
+    },
+    {
+      "text": "00020101021129070003a@b53031165802KH5901A6002PP64110002km0101ក630488C4",
+      "result": {
+        "tags": {
+          "29": "0003a@b",
+          "53": "116",
+          "58": "KH",
+          "59": "A",
+          "60": "PP",
+          "63": "88C4",
+          "64": "0002km0101ក",
+          "00": "01",
+          "01": "11"
+        },
+        "pointOfInitiation": "11",
+        "accountType": "individual",
+        "accountId": "a@b",
+        "account": {
+          "00": "a@b"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": null,
+        "merchantName": "A",
+        "merchantCity": "PP",
+        "countryCode": "KH",
+        "currency": "KHR",
+        "amount": null,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {},
+        "alternateLanguage": {
+          "00": "km",
+          "01": "ក"
+        },
+        "createdAt": null,
+        "expiresAt": null,
+        "crc": "88C4"
+      }
+    },
+    {
+      "text": "00020101021229070003a@b530384054034.562320106B-00010211085512345670803Tea5802KH5901A6002PP63049D87",
+      "result": {
+        "tags": {
+          "29": "0003a@b",
+          "53": "840",
+          "54": "4.5",
+          "58": "KH",
+          "59": "A",
+          "60": "PP",
+          "62": "0106B-00010211085512345670803Tea",
+          "63": "9D87",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "a@b",
+        "account": {
+          "00": "a@b"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": null,
+        "merchantName": "A",
+        "merchantCity": "PP",
+        "countryCode": "KH",
+        "currency": "USD",
+        "amount": 450,
+        "billNumber": "B-0001",
+        "mobileNumber": "08551234567",
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": "Tea",
+        "additional": {
+          "01": "B-0001",
+          "02": "08551234567",
+          "08": "Tea"
+        },
+        "alternateLanguage": {},
+        "createdAt": null,
+        "expiresAt": null,
+        "crc": "9D87"
+      }
+    },
+    {
+      "text": "  00020101021229180014vandoeurn@devb52045999530384054031015802KH5909Vandoeurn6010Phnom Penh9934001317272493649740113172724948497463047BD0\n",
+      "result": {
+        "tags": {
+          "29": "0014vandoeurn@devb",
+          "52": "5999",
+          "53": "840",
+          "54": "101",
+          "58": "KH",
+          "59": "Vandoeurn",
+          "60": "Phnom Penh",
+          "63": "7BD0",
+          "99": "0013172724936497401131727249484974",
+          "00": "01",
+          "01": "12"
+        },
+        "pointOfInitiation": "12",
+        "accountType": "individual",
+        "accountId": "vandoeurn@devb",
+        "account": {
+          "00": "vandoeurn@devb"
+        },
+        "acquiringBank": null,
+        "merchantId": null,
+        "merchantCategoryCode": "5999",
+        "merchantName": "Vandoeurn",
+        "merchantCity": "Phnom Penh",
+        "countryCode": "KH",
+        "currency": "USD",
+        "amount": 10100,
+        "billNumber": null,
+        "mobileNumber": null,
+        "storeLabel": null,
+        "terminalLabel": null,
+        "purpose": null,
+        "additional": {},
+        "alternateLanguage": {},
+        "createdAt": 1727249364974,
+        "expiresAt": 1727249484974,
+        "crc": "7BD0"
+      }
+    },
+    {
+      "text": "",
+      "error": "KhqrDecode",
+      "message": "A KHQR field list is empty",
+      "problem": "format"
+    },
+    {
+      "text": "hello",
+      "error": "KhqrDecode",
+      "message": "A KHQR field at 0 has no tag and length",
+      "problem": "format"
+    },
+    {
+      "text": "https://example.com",
+      "error": "KhqrDecode",
+      "message": "A KHQR field at 0 has no tag and length",
+      "problem": "format"
+    },
+    {
+      "text": "00020101021229180014vandoeurn@devb52045999530384054031015802KH5909Vandoeurn6010Phnom Penh993400131727249364974011317272494849",
+      "error": "KhqrDecode",
+      "message": "KHQR field 99 runs past the end",
+      "problem": "format"
+    },
+    {
+      "text": "0002016304ABCD",
+      "error": "KhqrDecode",
+      "message": "The KHQR checksum does not match its fields",
+      "problem": "crc"
+    },
+    {
+      "text": "00020101021229180014vandoeurn@devb52045999530384054031025802KH5909Vandoeurn6010Phnom Penh9934001317272493649740113172724948497463047BD0",
+      "error": "KhqrDecode",
+      "message": "The KHQR checksum does not match its fields",
+      "problem": "crc"
+    },
+    {
+      "text": "00020101021229070003a@b53037645802KH5901A6002PP630434F8",
+      "error": "KhqrDecode",
+      "message": "KHQR takes riel (116) and US dollars (840), not 764",
+      "problem": "field"
+    },
+    {
+      "text": "00020101021229070003a@b53038405401x5802KH5901A6002PP63049AAF",
+      "error": "KhqrDecode",
+      "message": "The KHQR amount x is not a USD amount above zero (2 decimals)",
+      "problem": "field"
+    },
+    {
+      "text": "00020101021229070003a@b5303840540105802KH5901A6002PP63041156",
+      "error": "KhqrDecode",
+      "message": "The KHQR amount 0 is not a USD amount above zero (2 decimals)",
+      "problem": "field"
+    },
+    {
+      "text": "00020101021229070003a@b5303840540512.3455802KH5901A6002PP630476A8",
+      "error": "KhqrDecode",
+      "message": "KHQR field 55 runs past the end",
+      "problem": "format"
+    },
+    {
+      "text": "00020101021229070003a@b530384099060002x15802KH5901A6002PP63045C33",
+      "error": "KhqrDecode",
+      "message": "A KHQR time (tag 99) is milliseconds since the epoch",
+      "problem": "field"
+    },
+    {
+      "text": "00020101021253038405802KH5901A6002PP63043DF3",
+      "error": "KhqrDecode",
+      "message": "A KHQR names a Bakong account (tag 29 or 30)",
+      "problem": "format"
+    },
+    {
+      "text": "0002010102122904010053038405802KH5901A6002PP6304961B",
+      "error": "KhqrDecode",
+      "message": "A KHQR names a Bakong account (tag 29 or 30, field 00)",
+      "problem": "format"
+    },
+    {
+      "text": "00020101021229070003a@b530384053038405802KH5901A6002PP6304E2A0",
+      "error": "KhqrDecode",
+      "message": "KHQR field 53 is written twice",
+      "problem": "format"
+    },
+    {
+      "text": "00020101021229070003a@b53038406203xyz5802KH5901A6002PP6304E3BB",
+      "error": "KhqrDecode",
+      "message": "A KHQR field at 0 has no tag and length",
+      "problem": "format"
+    },
+    {
+      "text": "00020201021229070003a@b53038405802KH5901A6002PP63049DB5",
+      "error": "KhqrDecode",
+      "message": "A KHQR starts with payload format 01",
+      "problem": "format"
+    },
+    {
+      "text": "00020101021229070003a@b53038405802KH5901A6002PP6304zzzz",
+      "error": "KhqrDecode",
+      "message": "A KHQR ends with its checksum (tag 63)",
+      "problem": "format"
+    }
+  ],
+  "readKhqrFields": [
+    {
+      "text": "0002010102",
+      "error": "KhqrDecode",
+      "message": "KHQR field 01 runs past the end",
+      "problem": "format"
+    },
+    {
+      "text": "29070003a@b",
+      "result": {
+        "29": "0003a@b"
+      }
+    },
+    {
+      "text": "00",
+      "error": "KhqrDecode",
+      "message": "A KHQR field at 0 has no tag and length",
+      "problem": "format"
+    },
+    {
+      "text": "0003ab",
+      "error": "KhqrDecode",
+      "message": "KHQR field 00 runs past the end",
+      "problem": "format"
+    },
+    {
+      "text": "0001a0001b",
+      "error": "KhqrDecode",
+      "message": "KHQR field 00 is written twice",
+      "problem": "format"
+    },
+    {
+      "text": "ab01x",
+      "error": "KhqrDecode",
+      "message": "A KHQR field at 0 has no tag and length",
+      "problem": "format"
+    },
+    {
+      "text": "0101ក",
+      "result": {
+        "01": "ក"
+      }
+    }
+  ],
+  "khqrField": [
+    {
+      "tag": "00",
+      "value": "01",
+      "field": "000201"
+    },
+    {
+      "tag": "59",
+      "value": "Lotus & Lime",
+      "field": "5912Lotus & Lime"
+    },
+    {
+      "tag": "62",
+      "value": "",
+      "field": "6200"
+    },
+    {
+      "tag": "01",
+      "value": "ក",
+      "field": "0101ក"
+    },
+    {
+      "tag": "02",
+      "value": "🍋",
+      "field": "0201🍋"
+    }
+  ],
+  "crc16": [
+    {
+      "text": "123456789",
+      "crc": "29B1"
+    },
+    {
+      "text": "",
+      "crc": "FFFF"
+    },
+    {
+      "text": "A",
+      "crc": "B915"
+    },
+    {
+      "text": "00020101021129180014jonhsmith@nbcq52041A2B53031165802KH5910Jonh Smith6010Phnom Penh6304",
+      "crc": "F7FD"
+    },
+    {
+      "text": "Café",
+      "crc": "8FDF"
+    },
+    {
+      "text": "ស្រះ",
+      "crc": "8924"
+    },
+    {
+      "text": "🍋",
+      "crc": "02A2"
+    }
+  ],
+  "khqrAmount": [
+    {
+      "minor": 20900,
+      "currency": "KHR",
+      "result": "20900"
+    },
+    {
+      "minor": 500,
+      "currency": "USD",
+      "result": "5"
+    },
+    {
+      "minor": 450,
+      "currency": "USD",
+      "result": "4.50"
+    },
+    {
+      "minor": 1,
+      "currency": "USD",
+      "result": "0.01"
+    },
+    {
+      "minor": 10100,
+      "currency": "USD",
+      "result": "101"
+    },
+    {
+      "minor": 123456789,
+      "currency": "USD",
+      "result": "1234567.89"
+    },
+    {
+      "minor": 0,
+      "currency": "USD",
+      "error": "KhqrInput",
+      "message": "A KHQR amount is a positive whole number of minor units",
+      "problem": "amount"
+    },
+    {
+      "minor": -5,
+      "currency": "KHR",
+      "error": "KhqrInput",
+      "message": "A KHQR amount is a positive whole number of minor units",
+      "problem": "amount"
+    },
+    {
+      "minor": 7,
+      "currency": "JPY",
+      "error": "KhqrInput",
+      "message": "KHQR takes riel and US dollars, not JPY",
+      "problem": "currency"
+    },
+    {
+      "minor": 1999,
+      "currency": "THB",
+      "error": "KhqrInput",
+      "message": "KHQR takes riel and US dollars, not THB",
+      "problem": "currency"
+    }
+  ],
+  "khqrMinor": [
+    {
+      "amount": "4.5",
+      "currency": "USD",
+      "minor": 450
+    },
+    {
+      "amount": "4.50",
+      "currency": "USD",
+      "minor": 450
+    },
+    {
+      "amount": "0.01",
+      "currency": "USD",
+      "minor": 1
+    },
+    {
+      "amount": "20900",
+      "currency": "KHR",
+      "minor": 20900
+    },
+    {
+      "amount": "1.5",
+      "currency": "KHR",
+      "minor": null
+    },
+    {
+      "amount": "1.001",
+      "currency": "USD",
+      "minor": null
+    },
+    {
+      "amount": "-1",
+      "currency": "USD",
+      "minor": null
+    },
+    {
+      "amount": "0",
+      "currency": "USD",
+      "minor": null
+    },
+    {
+      "amount": "0.00",
+      "currency": "USD",
+      "minor": null
+    },
+    {
+      "amount": "4.",
+      "currency": "USD",
+      "minor": null
+    },
+    {
+      "amount": " 4.5",
+      "currency": "USD",
+      "minor": null
+    },
+    {
+      "amount": "4.5",
+      "currency": "THB",
+      "minor": null
+    },
+    {
+      "amount": "12345678901234",
+      "currency": "KHR",
+      "minor": null
+    },
+    {
+      "amount": "1234567890123",
+      "currency": "KHR",
+      "minor": 1234567890123
+    }
+  ],
+  "khqrDecimals": [
+    {
+      "currency": "KHR",
+      "result": 0
+    },
+    {
+      "currency": "USD",
+      "result": 2
+    },
+    {
+      "currency": "THB",
+      "error": "KhqrInput",
+      "message": "KHQR takes riel and US dollars, not THB",
+      "problem": "currency"
+    },
+    {
+      "currency": "usd",
+      "error": "KhqrInput",
+      "message": "KHQR takes riel and US dollars, not usd",
+      "problem": "currency"
+    }
+  ],
+  "khqrMd5": [
+    {
+      "text": "",
+      "md5": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "text": "abc",
+      "md5": "900150983cd24fb0d6963f7d28e17f72"
+    },
+    {
+      "text": "00020101021229180014vandoeurn@devb52045999530384054031015802KH5909Vandoeurn6010Phnom Penh9934001317272493649740113172724948497463047BD0",
+      "md5": "66ae031d484194112553115cdc7faef1"
+    },
+    {
+      "text": "ស្រះ Lotus & Lime Café — 🍋",
+      "md5": "d55e814db8070b8e15232986b56bac05"
+    }
+  ],
+  "isBakongAccountId": [
+    {
+      "id": "lotus_lime@aclb",
+      "ok": true
+    },
+    {
+      "id": "lotus lime",
+      "ok": false
+    },
+    {
+      "id": "a@b",
+      "ok": true
+    },
+    {
+      "id": "a@",
+      "ok": false
+    },
+    {
+      "id": "@b",
+      "ok": false
+    },
+    {
+      "id": "a.b-c_d@e.f",
+      "ok": true
+    },
+    {
+      "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@b",
+      "ok": true
+    },
+    {
+      "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@b",
+      "ok": false
+    },
+    {
+      "id": "a@b@c",
+      "ok": false
+    },
+    {
+      "id": "a@b\n",
+      "ok": false
+    }
+  ],
+  "khqrTakes": [
+    {
+      "currency": "KHR",
+      "ok": true
+    },
+    {
+      "currency": "USD",
+      "ok": true
+    },
+    {
+      "currency": "THB",
+      "ok": false
+    },
+    {
+      "currency": "usd",
+      "ok": false
+    }
+  ],
+  "constants": {
+    "KHQR_CURRENCY": {
+      "KHR": "116",
+      "USD": "840"
+    },
+    "KHQR_CURRENCY_CODE": {
+      "116": "KHR",
+      "840": "USD"
+    },
+    "KHQR_MAX": {
+      "account": 32,
+      "name": 25,
+      "city": 15,
+      "bill": 25,
+      "store": 25
+    }
+  },
+  "bakong": [
+    {
+      "name": "paid",
+      "config": {
+        "token": "tok",
+        "baseUrl": "https://bakong.test/"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"SHOP@aclb\",\"amount\":4.5,\"currency\":\"USD\",\"hash\":\"h\"}}"
+        }
+      ],
+      "result": "paid",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://bakong.test/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "amount off",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 451,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"SHOP@aclb\",\"amount\":4.5,\"currency\":\"USD\",\"hash\":\"h\"}}"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": [
+        [
+          "error",
+          "Bakong abc: paid to SHOP@aclb 4.5 USD, not what the QR asked"
+        ]
+      ]
+    },
+    {
+      "name": "account off",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "other@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"SHOP@aclb\",\"amount\":4.5,\"currency\":\"USD\",\"hash\":\"h\"}}"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": [
+        [
+          "error",
+          "Bakong abc: paid to SHOP@aclb 4.5 USD, not what the QR asked"
+        ]
+      ]
+    },
+    {
+      "name": "money off",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "KHR"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"SHOP@aclb\",\"amount\":4.5,\"currency\":\"USD\",\"hash\":\"h\"}}"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": [
+        [
+          "error",
+          "Bakong abc: paid to SHOP@aclb 4.5 USD, not what the QR asked"
+        ]
+      ]
+    },
+    {
+      "name": "amount as text",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"shop@aclb\",\"amount\":\"4.50\",\"currency\":\"usd\"}}"
+        }
+      ],
+      "result": "paid",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "riel",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 20900,
+          "currency": "KHR"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"shop@aclb\",\"amount\":20900,\"currency\":\"KHR\"}}"
+        }
+      ],
+      "result": "paid",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "failed",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":1,\"errorCode\":3}"
+        }
+      ],
+      "result": "failed",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "not yet",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":1,\"errorCode\":1}"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "no data",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":null}"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "not JSON",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "<html>"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "HTTP 500",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 500,
+          "body": "{}"
+        }
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": [
+        [
+          "warn",
+          "Bakong check answered 500"
+        ]
+      ]
+    },
+    {
+      "name": "no answer",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        null
+      ],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": [
+        [
+          "warn",
+          "Bakong /v1/check_transaction_by_md5 did not answer: offline"
+        ]
+      ]
+    },
+    {
+      "name": "no token",
+      "config": {
+        "token": ""
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [],
+      "result": "pending",
+      "token": "",
+      "configured": false,
+      "renewed": [],
+      "requests": [],
+      "logs": []
+    },
+    {
+      "name": "not KHQR money",
+      "config": {
+        "token": "tok"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "THB"
+        }
+      ],
+      "answers": [],
+      "result": "pending",
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [],
+      "logs": []
+    },
+    {
+      "name": "renewed",
+      "config": {
+        "token": "old",
+        "email": "me@shop.test"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 401,
+          "body": "{}"
+        },
+        {
+          "status": 200,
+          "body": "{\"data\":{\"token\":\"fresh\"}}"
+        },
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0,\"data\":{\"toAccountId\":\"SHOP@aclb\",\"amount\":4.5,\"currency\":\"USD\",\"hash\":\"h\"}}"
+        }
+      ],
+      "result": "paid",
+      "token": "fresh",
+      "configured": true,
+      "renewed": [
+        "fresh"
+      ],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer old"
+        },
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/renew_token",
+          "body": {
+            "email": "me@shop.test"
+          },
+          "authorization": null
+        },
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer fresh"
+        }
+      ],
+      "logs": [
+        [
+          "info",
+          "Bakong token renewed"
+        ]
+      ]
+    },
+    {
+      "name": "renew refused",
+      "config": {
+        "token": "old",
+        "email": "me@shop.test"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 401,
+          "body": "{}"
+        },
+        {
+          "status": 200,
+          "body": "{\"responseCode\":1}"
+        }
+      ],
+      "result": "pending",
+      "token": "old",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer old"
+        },
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/renew_token",
+          "body": {
+            "email": "me@shop.test"
+          },
+          "authorization": null
+        }
+      ],
+      "logs": [
+        [
+          "error",
+          "Bakong refused the token and did not renew it: set a new token"
+        ],
+        [
+          "warn",
+          "Bakong check answered 401"
+        ]
+      ]
+    },
+    {
+      "name": "401 with no email",
+      "config": {
+        "token": "old"
+      },
+      "call": "check",
+      "args": [
+        "abc",
+        {
+          "accountId": "shop@aclb",
+          "amount": 450,
+          "currency": "USD"
+        }
+      ],
+      "answers": [
+        {
+          "status": 401,
+          "body": "{}"
+        }
+      ],
+      "result": "pending",
+      "token": "old",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5",
+          "body": {
+            "md5": "abc"
+          },
+          "authorization": "Bearer old"
+        }
+      ],
+      "logs": [
+        [
+          "warn",
+          "Bakong check answered 401"
+        ]
+      ]
+    },
+    {
+      "name": "account exists",
+      "config": {
+        "token": "tok"
+      },
+      "call": "accountExists",
+      "args": [
+        "shop@aclb"
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":0}"
+        }
+      ],
+      "result": true,
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_bakong_account",
+          "body": {
+            "accountId": "shop@aclb"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "no such account",
+      "config": {
+        "token": "tok"
+      },
+      "call": "accountExists",
+      "args": [
+        "nobody@aclb"
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":1,\"errorCode\":11}"
+        }
+      ],
+      "result": false,
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_bakong_account",
+          "body": {
+            "accountId": "nobody@aclb"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "account not understood",
+      "config": {
+        "token": "tok"
+      },
+      "call": "accountExists",
+      "args": [
+        "shop@aclb"
+      ],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"responseCode\":7}"
+        }
+      ],
+      "result": null,
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_bakong_account",
+          "body": {
+            "accountId": "shop@aclb"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "name": "account HTTP 503",
+      "config": {
+        "token": "tok"
+      },
+      "call": "accountExists",
+      "args": [
+        "shop@aclb"
+      ],
+      "answers": [
+        {
+          "status": 503,
+          "body": "{}"
+        }
+      ],
+      "result": null,
+      "token": "tok",
+      "configured": true,
+      "renewed": [],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/check_bakong_account",
+          "body": {
+            "accountId": "shop@aclb"
+          },
+          "authorization": "Bearer tok"
+        }
+      ],
+      "logs": [
+        [
+          "warn",
+          "Bakong account check answered 503"
+        ]
+      ]
+    },
+    {
+      "name": "account no token",
+      "config": {
+        "token": ""
+      },
+      "call": "accountExists",
+      "args": [
+        "shop@aclb"
+      ],
+      "answers": [],
+      "result": null,
+      "token": "",
+      "configured": false,
+      "renewed": [],
+      "requests": [],
+      "logs": []
+    },
+    {
+      "name": "renew",
+      "config": {
+        "token": "old",
+        "email": "me@shop.test"
+      },
+      "call": "renewToken",
+      "args": [],
+      "answers": [
+        {
+          "status": 200,
+          "body": "{\"data\":{\"token\":\"fresh\"}}"
+        }
+      ],
+      "result": true,
+      "token": "fresh",
+      "configured": true,
+      "renewed": [
+        "fresh"
+      ],
+      "requests": [
+        {
+          "url": "https://api-bakong.nbc.gov.kh/v1/renew_token",
+          "body": {
+            "email": "me@shop.test"
+          },
+          "authorization": null
+        }
+      ],
+      "logs": [
+        [
+          "info",
+          "Bakong token renewed"
+        ]
+      ]
+    },
+    {
+      "name": "renew with no email",
+      "config": {
+        "token": "old"
+      },
+      "call": "renewToken",
+      "args": [],
+      "answers": [],
+      "result": false,
+      "token": "old",
+      "configured": true,
+      "renewed": [],
+      "requests": [],
+      "logs": []
+    }
+  ]
+}

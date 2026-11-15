@@ -1,0 +1,57 @@
+{
+    "name": "basilbook/khqr",
+    "description": "KHQR, Cambodia's payment QR: make one, read one back, its Bakong md5, draw it as PNG or SVG, and ask Bakong whether it was paid. The PHP twin of @basilbook/khqr.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "khqr",
+        "bakong",
+        "cambodia",
+        "qr",
+        "payments",
+        "emvco",
+        "nbc"
+    ],
+    "homepage": "https://github.com/basilbook/khqr-php",
+    "authors": [
+        {
+            "name": "BasilBook",
+            "homepage": "https://github.com/basilbook"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "chillerlan/php-qrcode": "^5.0",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.8",
+        "phpunit/phpunit": "^10.5 || ^11.0"
+    },
+    "suggest": {
+        "ext-gd": "To draw a KHQR as a PNG (Khqr::image with type png). SVG needs nothing.",
+        "ext-intl": "Folds accented names with Unicode NFKD. Without it, a built-in table folds the same Latin letters.",
+        "guzzlehttp/guzzle": "Used as the HTTP client of BakongClient when you do not pass a PSR-18 client of your own."
+    },
+    "autoload": {
+        "psr-4": {
+            "BasilBook\\Khqr\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BasilBook\\Khqr\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}

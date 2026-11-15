@@ -1,0 +1,6 @@
+# What `composer require basilbook/khqr` downloads: src/, resources/, README, CHANGELOG, LICENSE.
+/tests               export-ignore
+/phpunit.xml.dist    export-ignore
+/.gitattributes      export-ignore
+/.gitignore          export-ignore
+* text=auto eol=lf
